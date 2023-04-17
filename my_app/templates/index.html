@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Add e-Book</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/entry.css')}}">
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+    <div class="card">
+        <h1>Book Management Form</h1>
+        <form action="/" method="POST">
+          <label for="book-name" class="form-label">Name of the book:</label>
+          <input type="text" name="book-name" id="book-name" class="form-input" required>
+    
+          <label for="publisher-name" class="form-label">Publisher's name:</label>
+          <input type="text" name="publisher-name" id="publisher-name" class="form-input" required>
+    
+          <label for="publisher-age" class="form-label">Publisher's age:</label>
+          <input type="number" name="publisher-age" id="publisher-age" class="form-input" required>
+    
+          <label for="publish-date" class="form-label">Publish date:</label>
+          <input type="date" name="publish-date" id="publish-date" class="form-input" required>
+    
+          <label for="book-type" class="form-label">Book type:</label>
+          <br>
+          <input type="checkbox" name="book-type" id="sci-fi" value="sci-fi" class="form-checkbox">
+          <label for="sci-fi" class="form-label">Sci-fi</label>
+          <input type="checkbox" name="book-type" id="drama" value="drama" class="form-checkbox">
+          <label for="drama" class="form-label">Drama</label>
+          <input type="checkbox" name="book-type" id="novel" value="novel" class="form-checkbox">
+          <label for="novel" class="form-label">Novel</label>
+    
+          <input type="submit" Value="Add Book" class="form-button">
+        </form>
+        
+      </div>
+</div>
+{% endblock %}
+
+

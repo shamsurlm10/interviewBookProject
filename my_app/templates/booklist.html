@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>e-Book</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/entry.css')}}">
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+  <div class="card">
+    <h1>Book List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th class="header">Serial No.</th>
+				<th class="header">Book Name</th>
+				<th class="header">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for book in books %}
+			<tr>
+				<td>{{ book.id }}</td>
+				<td>{{ book.name }}</td>
+				<td>
+					<a href="/update/{{ book.id }}">Update</a> | 
+					<a href="/delete/{{ book.id }}">Delete</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+  </div>
+</div>
+{% endblock %}
+
+
